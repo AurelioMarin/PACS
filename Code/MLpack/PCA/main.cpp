@@ -12,7 +12,7 @@ int main() {
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    // Do some things.
+    // PCA
     PCA<> p;
     p.Apply(InputData,2);
     // Stop the timer.
@@ -27,4 +27,3 @@ int main() {
 
     return 0;
 }
-//g++ -std=c++17 main.cpp -o main -I/home/aumar/PACS/Proyecto/mlpack-3.3.1/build/include -I/usr/include -larmadillo -lboost_serialization -lmlpack -lboost_program_options   -fopenmp

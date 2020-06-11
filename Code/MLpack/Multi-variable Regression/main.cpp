@@ -26,9 +26,13 @@ int main() {
     double train_error_lar;
     double test_error_lar;
 
+    //DATA LOADING
+
     data::Load("../../Data/Boston.csv", predictors);
     responses=arma::conv_to<arma::rowvec>::from( predictors.row(predictors.n_rows-1));
     predictors=predictors(arma::span(1,predictors.n_rows-2),arma::span::all);
+
+    //DATA SPLITTING
 
    double testratio;
      std::cout<<"Introduce the ratio of the Test set ";
@@ -39,7 +43,6 @@ int main() {
     std::cout<<"Begin linear regression algorithm"<<std::endl;
    std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    // Do some things.
     LinearRegression lr(traindata, trainresponses,0.2,true );
     parameters=lr.Parameters();
     std::cout<<"Parameters obtained"<<std::endl;
@@ -65,7 +68,6 @@ int main() {
 
     std::cout<<"Begin least-angle regression algorithm"<<std::endl;
     start = std::chrono::system_clock::now();
-    // Do some things.
     LARS lars(traindata, trainresponses);
 
     beta=lars.Beta();
@@ -80,7 +82,7 @@ int main() {
 
     std::cout<<"Training Regression L2 square error  :"<<train_error_lar<<std::endl;
     std::cout<<"Test Regression L2 square error  :"<<test_error_lar<<std::endl;
-    // Stop the timer.
+    // Stop  timer.
     end = std::chrono::system_clock::now();
     int elapsed_seconds2 = std::chrono::duration_cast<std::chrono::microseconds>
             (end-start).count();

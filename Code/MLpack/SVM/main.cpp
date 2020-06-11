@@ -23,6 +23,7 @@ int main() {
     double test_accu;
     arma::mat Confusion;
 
+    //DATA LOADING
     data::Load("../../Data/winequality-white.csv", InputData,false,true);
     std::cout<<"Size Train"<<arma::size(InputData);
     Label=arma::conv_to<arma::Row<size_t>>::from( InputData.row(InputData.n_rows-1));
@@ -38,7 +39,7 @@ int main() {
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
      start = std::chrono::system_clock::now();
-     // Do some things.
+     // SVM
      LinearSVM svm(TrainData,TrainLabel,7);
 
      parameters=svm.Parameters();
@@ -56,10 +57,7 @@ int main() {
      std::cout<<"Test result"<<std::endl;
      std::cout<<"Accuracy : "<<test_accu<<std::endl;
     std::cout<<"Confusion matrix : "<<std::endl<<Confusion;
-
-
-
-     // Stop the timer.
+   // Stop the timer.
      end = std::chrono::system_clock::now();
      int elapsed_seconds = std::chrono::duration_cast<std::chrono::microseconds>
              (end-start).count();
@@ -70,4 +68,3 @@ int main() {
 
      return 0;
 }
-//g++ -std=c++17 DataSplit.cpp main.cpp -o main -I/home/aumar/PACS/Proyecto/mlpack-3.3.1/build/include -I/usr/include -larmadillo -lboost_serialization -lmlpack -lboost_program_options   -fopenmp

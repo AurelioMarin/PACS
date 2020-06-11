@@ -39,7 +39,7 @@ int main() {
     std::cout<<"Begin linear regression algorithm"<<std::endl;
    std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    // Do some things.
+    // Linear Regressor
     LinearRegression lr(traindata, trainresponses,0.2,true );
 
     parameters=lr.Parameters();
@@ -66,7 +66,7 @@ int main() {
 
     std::cout<<"Begin least-angle regression algorithm"<<std::endl;
     start = std::chrono::system_clock::now();
-    // Do some things.
+    // LARS class
     LARS lars(traindata, trainresponses);
 
     beta=lars.Beta();
@@ -91,4 +91,3 @@ int main() {
 
     return 0;
 }
-//g++ -std=c++17 DataSplit.cpp main.cpp -o main -I/home/aumar/PACS/Proyecto/mlpack-3.3.1/build/include -I/usr/include -larmadillo -lboost_serialization -lmlpack -lboost_program_options   -fopenmp

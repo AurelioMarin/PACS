@@ -16,12 +16,12 @@ int main() {
     arma::mat TrainData;
     arma::Row<size_t> TrainLabel;
     arma::mat TestData;
-    arma::Row<size_t> TestLabel;// Load into this matrix.
+    arma::Row<size_t> TestLabel;
 
-    data::Load("../../Data/iris_data.csv", InputData,false,true);
-    InputData=InputData(arma::span::all,arma::span(0,InputData.n_cols-2));
+    // DATA LOADING
 
-    data::Load("../../Data/iris_labels.csv", Label,false, true);
+    data::Load("../../Data/iris_values.csv", InputData);
+    data::Load("../../Data/iris_labels.csv", Label);
     //DATA SPLIT
     float TestRatio;
     std::cout<<"Introduce the ratio of the Test set ";
