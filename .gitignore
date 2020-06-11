@@ -13,12 +13,13 @@ main
 *.a
 *.so
 
+
 # makefile aux
 make.dep
 
 # simulation results
 *.dat
-
+*.xml
 # latex
 *.aux
 *.log

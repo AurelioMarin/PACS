@@ -81,28 +81,7 @@ int main()
     cout << "Matthews correlation coefficient: " << binary_classification_tests[12] << endl;
     cout << "Informedness                    : " << binary_classification_tests[13] << endl;
     cout << "Markedness                      : " << binary_classification_tests[14] << endl;
-    // Save results
-
-    data_set.save("../data/data_set.xml");
-
-    neural_network.save("../data/neural_network.xml");
-    neural_network.save_expression("../data/expression.txt");
-
-    training_strategy.save("../data/training_strategy.xml");
-//        training_strategy_results.save("../data/training_strategy_results.dat");
-
-    confusion.save_csv("../data/confusion.csv");
-//        binary_classification_tests.save("../data/binary_classification_tests.dat");
-
-    /*
-    data_set.save("data_set.xml");
-
-    neural_network.save("neural_network.xml");
-
-    training_strategy.save("training_strategy.xml");
-    training_strategy_results.save("training_strategy_results.dat");
-    confusion.save_csv("ConfusionMatrix.csv");
-*/
+    
     return 0;
 
 }

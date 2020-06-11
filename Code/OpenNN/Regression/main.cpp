@@ -11,10 +11,7 @@ int main()
 {
     srand(static_cast<unsigned>(time(nullptr)));
 
-        // Data set Reading
-
-        //DataSet data_set("../Data/shampo_sales.csv", ',', true);
-
+    // Data set Reading
     DataSet data_set("../../Data/Boston.csv",',',true);
     data_set.set_columns_uses({"UnusedVariable","Input","Input","Input","Input","Input","Input","Input","Input","Input","Input","Input","Input","Input","Target"});
 
@@ -32,34 +29,33 @@ int main()
 
     // Scaling layer
 
-    ScalingLayer* scaling_layer = new ScalingLayer(inputs_number);
-    scaling_layer->set_descriptives(inputs_descriptives);
-    //scaling_layer_pointer->set_scaling_methods(ScalingLayer::NoScaling);
+    ScalingLayer* scaling_layer_ptr = new ScalingLayer(inputs_number);
+    scaling_layer_ptr->set_descriptives(inputs_descriptives);
 
-    neural_network.add_layer(scaling_layer);
+    neural_network.add_layer(scaling_layer_ptr);
 
-    const size_t scaling_layer_outputs_dimensions = scaling_layer->get_neurons_number();
+    const size_t scaling_layer_outputs_dimensions = scaling_layer_ptr->get_neurons_number();
     //Perceptron block
 
-    PerceptronLayer* perceptron_layer_1 = new PerceptronLayer(scaling_layer_outputs_dimensions,64);
-    perceptron_layer_1->set_activation_function(PerceptronLayer::RectifiedLinear);
-    neural_network.add_layer(perceptron_layer_1);
+    PerceptronLayer* perceptron_layer_1_ptr = new PerceptronLayer(scaling_layer_outputs_dimensions,64);
+    perceptron_layer_1_ptr->set_activation_function(PerceptronLayer::RectifiedLinear);
+    neural_network.add_layer(perceptron_layer_1_ptr);
 
-    const size_t perceptron_layer_1_outputs = perceptron_layer_1->get_neurons_number();
+    const size_t perceptron_layer_1_outputs = perceptron_layer_1_ptr->get_neurons_number();
 
-    PerceptronLayer* perceptron_layer_2 = new PerceptronLayer(perceptron_layer_1_outputs,64);
-    perceptron_layer_2->set_activation_function(PerceptronLayer::RectifiedLinear);
-    neural_network.add_layer(perceptron_layer_2);
+    PerceptronLayer* perceptron_layer_2_ptr = new PerceptronLayer(perceptron_layer_1_outputs,64);
+    perceptron_layer_2_ptr->set_activation_function(PerceptronLayer::RectifiedLinear);
+    neural_network.add_layer(perceptron_layer_2_ptr);
 
-    const size_t perceptron_layer_2_outputs = perceptron_layer_2->get_neurons_number();
+    const size_t perceptron_layer_2_outputs = perceptron_layer_2_ptr->get_neurons_number();
 
-    PerceptronLayer* perceptron_layer_3 = new PerceptronLayer(perceptron_layer_2_outputs,1);
-    neural_network.add_layer(perceptron_layer_3);
+    PerceptronLayer* perceptron_layer_3_ptr = new PerceptronLayer(perceptron_layer_2_outputs,1);
+    neural_network.add_layer(perceptron_layer_3_ptr);
 
-    const size_t perceptron_layer_3_outputs = perceptron_layer_3->get_neurons_number();
+    const size_t perceptron_layer_3_outputs = perceptron_layer_3_ptr->get_neurons_number();
 
-    UnscalingLayer* unscaling_layer_pointer = new UnscalingLayer(perceptron_layer_3_outputs);
-    neural_network.add_layer(unscaling_layer_pointer);
+    UnscalingLayer* unscaling_layer_ptr = new UnscalingLayer(perceptron_layer_3_outputs);
+    neural_network.add_layer(unscaling_layer_ptr);
 
     neural_network.print_summary();
 
