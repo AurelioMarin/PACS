@@ -44,10 +44,10 @@ int main()
 
     // Scaling layer
 
-    ScalingLayer* scaling_layer_prt = new ScalingLayer(inputs_number);
-    scaling_layer_prt->set_scaling_methods(ScalingLayer::NoScaling);
+    ScalingLayer* scaling_layer_ptr = new ScalingLayer(inputs_number);
+    scaling_layer_ptr->set_scaling_methods(ScalingLayer::NoScaling);
 
-    neural_network.add_layer(scaling_layer_prt);
+    neural_network.add_layer(scaling_layer_ptr);
 
     const size_t scaling_layer_outputs_dimensions = scaling_layer_ptr->get_neurons_number();
 
