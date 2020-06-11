@@ -28,25 +28,25 @@ int main()
 
     // Scaling layer
 
-    ScalingLayer* scaling_layer = new ScalingLayer(inputs_number);
-    scaling_layer->set_descriptives(inputs_descriptives);
-    scaling_layer->set_scaling_methods(ScalingLayer::MeanStandardDeviation);
+    ScalingLayer* scaling_layer_ptr = new ScalingLayer(inputs_number);
+    scaling_layer_ptr->set_descriptives(inputs_descriptives);
+    scaling_layer_ptr->set_scaling_methods(ScalingLayer::MeanStandardDeviation);
 
-    neural_network.add_layer(scaling_layer);
+    neural_network.add_layer(scaling_layer_ptr);
 
-    const size_t scaling_layer_outputs_dimensions = scaling_layer->get_neurons_number();
+    const size_t scaling_layer_outputs_dimensions = scaling_layer_ptr->get_neurons_number();
     //Perceptron block
 
-    PerceptronLayer* perceptron_layer_1 = new PerceptronLayer(scaling_layer_outputs_dimensions,8);
-    perceptron_layer_1->set_activation_function(PerceptronLayer::RectifiedLinear);
-    neural_network.add_layer(perceptron_layer_1);
+    PerceptronLayer* perceptron_layer_1_ptr = new PerceptronLayer(scaling_layer_outputs_dimensions,8);
+    perceptron_layer_1_ptr->set_activation_function(PerceptronLayer::RectifiedLinear);
+    neural_network.add_layer(perceptron_layer_1_ptr);
 
-    const size_t perceptron_layer_1_outputs = perceptron_layer_1->get_neurons_number();
+    const size_t perceptron_layer_1_outputs = perceptron_layer_1_ptr->get_neurons_number();
 
-    ProbabilisticLayer* probabilistic_layer = new ProbabilisticLayer(perceptron_layer_1_outputs, outputs_number);
-    probabilistic_layer->set_activation_function(ProbabilisticLayer::ActivationFunction::Softmax);
+    ProbabilisticLayer* probabilistic_layer_ptr = new ProbabilisticLayer(perceptron_layer_1_outputs, outputs_number);
+    probabilistic_layer_ptr->set_activation_function(ProbabilisticLayer::ActivationFunction::Softmax);
 
-    neural_network.add_layer(probabilistic_layer);
+    neural_network.add_layer(probabilistic_layer_ptr);
 
     neural_network.print_summary();
 
@@ -73,8 +73,6 @@ int main()
     TestingAnalysis testing_analysis(&neural_network, &data_set);
     cout<<endl<<"Testing Analysis"<<endl;
     const Matrix<size_t> confusion = testing_analysis.calculate_confusion();
-
-    Vector<double> multiple_classification_tests = testing_analysis.calculate_multiple_classification_tests();
 
     cout << "Confusion: " << endl;
     cout << confusion << endl;
