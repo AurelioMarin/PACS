@@ -1,9 +1,10 @@
 # Final PACS project
 # Installation and Compilation Instructions
 This project is based on two external libraries that are going to be tested.
+
 This is specified for Linux user, in my case I used Ubuntu 18.04
 # MLpack
-The installation and compilation is based on the information provided on \\ https://www.mlpack.org/doc/mlpack-git/doxygen/build.html.
+The installation and compilation is based on the information provided on  https://www.mlpack.org/doc/mlpack-git/doxygen/build.html.
 
 You will need to have installed the following dependencies:
 Armadillo>=8.400.0,Boost>=1.58 (specifically the modules math_c99, program_options, serialization, unit_test_framework, heap and spirit),
@@ -30,6 +31,7 @@ When executing cmake, it would be needed to  specifies the Boost library directo
 Now, we are ready to run our examples. All the examples include a makefile to ease their compilation. The user will need to change the variable MLPACK_DIR equal to the directory "include" on the previous build directory created.
 
 #OpenNN
+
 The installation and compilation is based on the information provided on https://www.opennn.net/documentation/building_opennn.html
 The only dependency needed is the Eigen library which will be installed automatically while installing OpenNN.
 
