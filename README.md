@@ -30,9 +30,10 @@ When executing cmake, it would be needed to  specifies the Boost library directo
 
 Now, we are ready to run our examples. All the examples include a makefile to ease their compilation. The user will need to change the variable MLPACK_DIR equal to the directory "include" on the previous build directory created.
 
-#OpenNN
+# OpenNN
 
 The installation and compilation is based on the information provided on https://www.opennn.net/documentation/building_opennn.html
+
 The only dependency needed is the Eigen library which will be installed automatically while installing OpenNN.
 
 We can download the package with GitHub or SourceForce.However, during the installation we have found that the SourceForce wil not found the information to install the given examples by the library. Therefore, It would be recommended to follow the GitHub via.
