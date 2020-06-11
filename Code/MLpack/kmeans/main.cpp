@@ -34,7 +34,7 @@ int main() {
     arma::mat centroids;
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
-    // Do some things.
+    // KMeans definition
     KMeans<> k;
     k.Cluster(TrainData, clusters, assignments, centroids);
 
