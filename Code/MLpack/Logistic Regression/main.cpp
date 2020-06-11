@@ -15,7 +15,7 @@ int main() {
     arma::mat TrainData;
     arma::Row<size_t> TrainLabel;
     arma::mat TestData;
-    arma::Row<size_t> TestLabel;// Load into this matrix.
+    arma::Row<size_t> TestLabel;
     arma::rowvec parameters;
     arma::Row<size_t> predictions;
 
@@ -24,6 +24,8 @@ int main() {
     double train_accu;
     double test_accu;
     arma::mat Confusion;
+
+    //DATA LOADING
 
     data::Load("../../Data/data_banknote_authentication.txt", InputData,false,true);
     Label=arma::conv_to<arma::Row<size_t>>::from( InputData.row(InputData.n_rows-1));
@@ -37,12 +39,13 @@ int main() {
 
 
 
-    std::chrono::time_point<std::chrono::system_clock> start, end;
+     //Timer setting
+     std::chrono::time_point<std::chrono::system_clock> start, end;
      start = std::chrono::system_clock::now();
-     // Do some things.
+     // Logistic regressor
      LogisticRegression lr(TrainData,TrainLabel);
 
-    parameters=lr.Parameters();
+     parameters=lr.Parameters();
      std::cout<<"Parameters obtained"<<std::endl;
      std::cout<<parameters<<std::endl;
 
@@ -60,7 +63,7 @@ int main() {
      std::cout<<"Test result"<<std::endl;
      std::cout<<"Error : "<<test_error<<std::endl;
      std::cout<<"Accuracy : "<<test_accu<<std::endl;
-    std::cout<<"Confusion matrix : "<<std::endl<<Confusion;
+     std::cout<<"Confusion matrix : "<<std::endl<<Confusion;
 
 
 
@@ -76,4 +79,3 @@ int main() {
 
      return 0;
 }
-//g++ -std=c++17 DataSplit.cpp main.cpp -o main -I/home/aumar/PACS/Proyecto/mlpack-3.3.1/build/include -I/usr/include -larmadillo -lboost_serialization -lmlpack -lboost_program_options   -fopenmp
