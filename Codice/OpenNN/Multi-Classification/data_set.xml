@@ -1,0 +1,46 @@
+<DataSet>
+   <DataFile>
+      <FileType>csv</FileType>
+      <DataFileName>../../Data/iris_data.csv</DataFileName>
+      <Separator>Comma</Separator>
+      <ColumnsNames>0</ColumnsNames>
+      <RowsLabels>0</RowsLabels>
+      <missing_values_label>NA</missing_values_label>
+      <LagsNumber>0</LagsNumber>
+      <StepsAhead>0</StepsAhead>
+      <TimeIndex>61856</TimeIndex>
+   </DataFile>
+   <Columns>
+      <ColumnsNumber>5</ColumnsNumber>
+      <Column Item="0">
+         <Name>column_1</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="1">
+         <Name>column_2</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="2">
+         <Name>column_3</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="3">
+         <Name>column_4</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="4">
+         <Name>column_5</Name>
+         <ColumnUse>Target</ColumnUse>
+         <Type>Categorical</Type>
+         <Categories>Iris-setosaIris-versicolorIris-virginica</Categories>
+         <CategoriesUses>TargetTargetTarget</CategoriesUses>
+      </Column>
+   </Columns>
+   <Instances>
+      <InstancesNumber>150</InstancesNumber>
+      <InstancesUses>0 1 0 1 1 0 1 0 2 1 0 2 0 0 0 2 1 0 0 1 0 2 0 0 0 0 1 2 2 2 2 2 1 1 0 0 2 0 0 1 0 2 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 2 0 0 2 2 0 0 0 0 0 2 0 2 0 0 0 1 1 2 2 0 0 0 0 2 0 0 0 0 0 0 0 0 1 0 1 0 2 0 0 0 1 0 2 1 1 2 1 2 2 0 0 0 0 0 0 0 1 0 0 2 1 0 0 0 1 2 2 1 0 2 0 0 0 2 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 2</InstancesUses>
+   </Instances>

@@ -1,0 +1,94 @@
+<DataSet>
+   <DataFile>
+      <FileType>csv</FileType>
+      <DataFileName>../../Data/Boston.csv</DataFileName>
+      <Separator>Comma</Separator>
+      <ColumnsNames>1</ColumnsNames>
+      <RowsLabels>0</RowsLabels>
+      <missing_values_label>NA</missing_values_label>
+      <LagsNumber>0</LagsNumber>
+      <StepsAhead>0</StepsAhead>
+      <TimeIndex>61856</TimeIndex>
+   </DataFile>
+   <Columns>
+      <ColumnsNumber>15</ColumnsNumber>
+      <Column Item="0">
+         <Name>index</Name>
+         <ColumnUse>Unused</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="1">
+         <Name>crim</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="2">
+         <Name>zn</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="3">
+         <Name>indus</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="4">
+         <Name>chas</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Binary</Type>
+      </Column>
+      <Column Item="5">
+         <Name>nox</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="6">
+         <Name>rm</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="7">
+         <Name>age</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="8">
+         <Name>dis</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="9">
+         <Name>rad</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="10">
+         <Name>tax</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="11">
+         <Name>ptratio</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="12">
+         <Name>black</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="13">
+         <Name>lstat</Name>
+         <ColumnUse>Input</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+      <Column Item="14">
+         <Name>medv</Name>
+         <ColumnUse>Target</ColumnUse>
+         <Type>Numeric</Type>
+      </Column>
+   </Columns>
+   <Instances>
+      <InstancesNumber>506</InstancesNumber>
+      <InstancesUses>0 2 2 2 0 2 0 0 0 1 0 2 0 1 2 0 1 2 0 0 1 0 0 1 0 0 0 1 2 1 2 0 0 2 2 1 1 0 0 0 2 1 0 2 0 0 0 1 0 0 1 0 0 2 0 2 1 0 1 0 0 1 0 0 0 0 0 0 0 2 2 1 1 0 1 2 1 1 2 0 0 0 1 0 2 0 0 2 0 0 0 0 0 2 0 0 0 0 0 2 0 0 2 0 2 1 2 1 0 1 0 0 1 0 0 0 0 0 1 0 0 2 0 2 2 1 0 0 2 2 0 2 1 0 2 1 2 2 0 0 0 0 0 0 0 2 2 0 0 2 0 0 2 1 2 1 2 0 0 0 0 0 0 0 1 2 2 0 2 0 0 0 2 0 0 2 0 1 0 0 0 0 1 0 2 1 2 0 0 0 2 1 0 0 2 1 0 0 0 2 2 2 0 2 2 2 2 0 0 0 0 0 1 2 0 2 1 2 0 0 2 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2 0 0 1 0 0 0 0 0 0 0 1 0 2 0 1 0 0 2 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 1 2 0 0 1 0 0 0 0 0 0 2 1 0 2 1 0 0 0 0 1 1 0 1 1 0 2 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 2 1 0 0 0 0 0 0 0 0 2 1 2 0 0 0 2 0 0 1 1 2 0 0 0 0 1 1 1 0 0 0 2 2 1 0 2 2 0 0 1 1 1 0 2 1 0 1 2 0 1 0 0 0 1 1 1 0 0 0 0 1 0 2 0 2 2 0 2 0 0 0 1 0 1 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 2 0 0 2 1 2 1 0 2 0 0 0 1 0 0 1 2 1 0 2 0 1 0 1 0 0 0 0 2 1 1 2 2 2 1 0 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 2 0 1 1 2 0 0 0 0 2 0 1 0 0 0 0 0 0 2 1</InstancesUses>
+   </Instances>
