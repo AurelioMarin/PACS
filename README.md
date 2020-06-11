@@ -28,7 +28,7 @@ $sudo make install
 
 When executing cmake, it would be needed to  specifies the Boost library directory on the command line (-DBOOST_LIBRARYDIR) since it is stored in /usr/lib/x86_64-linux-gnu. Otherwise,the modules program_options, serialization, unit_test_framework will not be found.
 
-Now, we are ready to run our examples. All the examples include a makefile to ease their compilation. The user will need to change the variable MLPACK_DIR equal to the directory "include" on the previous build directory created.
+Now, we are ready to run our examples. All the examples include a makefile to ease their compilation. The user will need to change the variable MLPACK_DIR equal to the directory "lib" on the previous build directory created.
 
 # OpenNN
 
